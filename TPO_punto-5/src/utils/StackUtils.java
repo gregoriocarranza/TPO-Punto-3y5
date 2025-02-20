@@ -7,6 +7,15 @@ import java.util.TreeSet;
 
 public class StackUtils {
 
+    /**
+     * Ordena una pila eliminando duplicados y ordenando en forma ascendente.
+     *
+     * Complejidad: O(n^2), ya que el primer bucle recorre la pila y verifica duplicados en O(n),
+     * y el segundo bucle inserta ordenadamente en O(n^2) en el peor caso.
+     *
+     * @param inputStack La pila de entrada a ordenar.
+     * @return Una pila ordenada sin duplicados.
+     */
     public static DynamicStack OrderStack(DynamicStack inputStack) {
         DynamicStack auxStack = new DynamicStack();
         DynamicStack sortedStack = new DynamicStack();

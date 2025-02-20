@@ -44,6 +44,15 @@ public class DictionaryUtil {
         return encrypted.toString();
     }
 
+    /**
+     * Descifra un texto cifrado con el cifrado César sin conocer el desplazamiento.
+     *
+     * Complejidad: O(n), ya que recorre el texto una vez para contar la frecuencia de letras,
+     * luego encuentra la letra más frecuente en O(n), y finalmente descifra en O(n).
+     *
+     * @param encryptedText Texto cifrado a descifrar.
+     * @return Texto descifrado.
+     */
     public static String decryptCesar(String encryptedText) {
         DynamicDictionary frequencyDict = new DynamicDictionary();
         for (char c : encryptedText.toCharArray()) {
@@ -71,7 +80,29 @@ public class DictionaryUtil {
         return returnTextWithoutShift(encryptedText, ALPHABET.length() - shift);
     }
 
+
+    /**
+     * Verifica si una expresión tiene paréntesis, corchetes y llaves balanceados,
+     * ignorando los que están dentro de comillas simples o dobles.
+     *
+     * Complejidad: O(n), ya que recorre la expresión una vez y utiliza una pila
+     * para manejar los paréntesis de manera eficiente.
+     *
+     * @param expression Expresión a evaluar.
+     * @return `true` si está balanceada, `false` en caso contrario.
+     */
     public static boolean isBalanced(String expression) {
+        DynamicStack stack = new DynamicStack();
+        boolean insideQuotes = false;
+        char quoteChar = ' ';
+
+        for (char c : expression.toCharArray()) {
+            if (c == '"' || c == '\'') {
+                if (insideQuotes && c == quoteChar) {
+                    insideQuotes = false;
+                } else if (!
+
+                public static boolean isBalanced(String expression) {
         DynamicStack stack = new DynamicStack();
         boolean insideQuotes = false;
         char quoteChar = ' ';
